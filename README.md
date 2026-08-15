@@ -45,9 +45,14 @@ $ pnpm test
 
 ---
 
-## 전자책(PDF) 생성 및 로컬 실행
+## 전자책(PDF) 다운로드
 
-### 한국어판 PDF 생성하기
+- 📥 **[한국어판 완역본 PDF 다운로드 (v1.0.0)](https://github.com/gomjellie/mostly-adequate-guide-kr/releases/download/v1.0.0-kr/mostly-adequate-guide-kr.pdf)**
+- 🚀 **[GitHub Releases 릴리즈 페이지 바로가기](https://github.com/gomjellie/mostly-adequate-guide-kr/releases/tag/v1.0.0-kr)**
+
+---
+
+## 로컬에서 전자책(PDF) 직접 빌드하기
 
 이 프로젝트는 최신 Node.js 환경에서 동작하는 Puppeteer 기반의 고품질 PDF 생성 스크립트를 내장하고 있습니다.
 
