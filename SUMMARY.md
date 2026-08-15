@@ -13,7 +13,7 @@
   - [순수성의 예](ch03-kr.md#순수성의-예)
   - [요약](ch03-kr.md#요약)
 - [04 장: 커링](ch04-kr.md)
-  - [Can't Live If Livin' Is without You](ch04-kr.md#cant-live-if-livin-is-without-you)
+  - [너 없인 못 살아 (Can't Live If Livin' Is without You)](ch04-kr.md#너-없인-못-살아-cant-live-if-livin-is-without-you)
   - [말장난 조금 더 / 특별한 소스](ch04-kr.md#말장난-조금-더--특별한-소스)
   - [요약](ch04-kr.md#요약)
   - [연습문제](ch04-kr.md#연습문제)
