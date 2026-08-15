@@ -1,2 +1,6 @@
 _book
 *.lock
+node_modules
+book_preview.html
+*.pdf
+mostly-adequate-guide-kr/

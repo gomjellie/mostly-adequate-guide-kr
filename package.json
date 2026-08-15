@@ -3,18 +3,24 @@
   "version": "1.0.0",
   "description": "The Mostly Adequate Guide to Functional Programming",
   "dependencies": {
-    "gitbook-plugin-include-codeblock": "^3.2.2",
-    "gitbook-plugin-exercises": "MostlyAdequate/plugin-exercises"
+    "gitbook-plugin-exercises": "MostlyAdequate/plugin-exercises",
+    "gitbook-plugin-include-codeblock": "^3.2.2"
   },
   "devDependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "highlight.js": "^11.12.0",
+    "marked": "^18.0.9",
+    "marked-highlight": "^2.2.4",
+    "puppeteer": "^25.7.0",
+    "vitest": "^4.1.10"
   },
   "scripts": {
     "setup": "$(npm bin)/gitbook install",
     "start": "$(npm bin)/gitbook serve",
     "generate-summary": "perl -n .generate-summary.pl ch*.md appendix_*.md > SUMMARY.md",
+    "test": "vitest run",
     "generate-epub": "gitbook epub",
-    "generate-pdf": "gitbook pdf"
+    "generate-pdf": "node generate-pdf.js"
   },
   "repository": {
     "type": "git",

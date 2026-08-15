@@ -88,42 +88,34 @@ const allTheChildren = (elements) => map(elements, getChildren);
 
 우리는 인자를 조금만 넘겨주면서 즉석에서 유용하고 새로운 함수를 만들 수 있어요. 또 함수가 여러 인자를 요구함에도 수학적인 함수 정의를 얻을 수 있어요.
 
-이제 또 다른 도구인 함성(`compose`)를 만나볼까요?
-
-[Chapter 05: Coding by Composing](ch05.md)
+이제 또 다른 도구인 합성(`compose`)을 만나볼까요?
 
 ## 연습문제
 
 #### 연습문제에 대하여
 
-Throughout the book, you might encounter an 'Exercises' section like this one. Exercises can be
-done directly in-browser provided you're reading from [gitbook](https://mostly-adequate.gitbooks.io/mostly-adequate-guide) (recommended).
+책을 읽다 보면 이와 같은 '연습문제' 섹션을 만날 수 있습니다. [Gitbook](https://mostly-adequate.gitbooks.io/mostly-adequate-guide)에서 읽고 계시다면 브라우저에서 직접 연습문제를 풀 수 있습니다(권장).
 
-Note that, for all exercises of the book, you always have a handful of helper functions
-available in the global scope. Hence, anything that is defined in [Appendix A](./appendix_a.md),
-[Appendix B](./appendix_b.md) and [Appendix C](./appendix_c.md) is available for you! And, as
-if it wasn't enough, some exercises will also define functions specific to the problem
-they present; as a matter of fact, consider them available as well.
+책의 모든 연습문제에서는 전역 스코프에서 사용 가능한 유용한 헬퍼 함수들이 항상 제공됩니다. 따라서 [부록 A](./appendix_a.md), [부록 B](./appendix_b.md), [부록 C](./appendix_c.md)에 정의된 모든 것을 바로 사용할 수 있습니다! 뿐만 아니라 일부 연습문제는 해당 문제에 특화된 함수를 별도로 정의하기도 하므로, 그 함수들 역시 자유롭게 사용할 수 있습니다.
 
-> Hint: you can submit your solution by doing `Ctrl + Enter` in the embedded editor!
+> 힌트: 내장 에디터에서 `Ctrl + Enter`를 누르면 답안을 제출할 수 있습니다!
 
-#### Running Exercises on Your Machine (optional)
+#### 로컬 환경에서 연습문제 실행하기 (선택사항)
 
-Should you prefer to do exercises directly in files using your own editor:
+자신의 에디터를 사용해 파일에서 직접 문제를 풀고 싶다면:
 
-- clone the repository (`git clone git@github.com:MostlyAdequate/mostly-adequate-guide.git`)
-- go in the _exercises_ section (`cd mostly-adequate-guide/exercises`)
-- install the necessary plumbing using [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (`npm install`)
-- complete answers by modifying the files named \*exercises\_\*\* in the corresponding chapter's folder
-- run the correction with npm (e.g. `npm run ch04`)
+- 저장소를 클론합니다 (`git clone https://github.com/MostlyAdequate/mostly-adequate-guide-kr.git`)
+- exercises 디렉토리로 이동합니다 (`cd mostly-adequate-guide-kr/exercises`)
+- [pnpm](https://pnpm.io/) 또는 npm을 사용해 필요한 의존성을 설치합니다 (`pnpm install`)
+- 해당 챕터 폴더의 `exercise_*.js` 파일들을 수정하여 답안을 완성합니다
+- 테스트를 실행하여 정답을 확인합니다 (예: `pnpm run ch04`)
 
-Unit tests will run against your answers and provide hints in case of mistake. By the by, the
-answers to the exercises are available in files named \*answers\_\*\*.
+작성한 답안을 대상으로 단위 테스트가 실행되며 오답일 경우 힌트를 제공합니다. 참고로 연습문제의 해답은 `solution_*.js` 파일에서 확인할 수 있습니다.
 
-#### Let's Practice!
+#### 연습해 봅시다!
 
-{% exercise %}  
-Refactor to remove all arguments by partially applying the function.
+{% exercise %}
+함수를 부분 적용하여 모든 인자를 제거하도록 리팩토링하세요.
 
 {% initial src="./exercises/ch04/exercise_a.js#L3;" %}
 
@@ -131,15 +123,15 @@ Refactor to remove all arguments by partially applying the function.
 const words = (str) => split(" ", str);
 ```
 
-{% solution src="./exercises/ch04/solution_a.js" %}  
-{% validation src="./exercises/ch04/validation_a.js" %}  
-{% context src="./exercises/support.js" %}  
+{% solution src="./exercises/ch04/solution_a.js" %}
+{% validation src="./exercises/ch04/validation_a.js" %}
+{% context src="./exercises/support.js" %}
 {% endexercise %}
 
 ---
 
-{% exercise %}  
-Refactor to remove all arguments by partially applying the functions.
+{% exercise %}
+함수들을 부분 적용하여 모든 인자를 제거하도록 리팩토링하세요.
 
 {% initial src="./exercises/ch04/exercise_b.js#L3;" %}
 
@@ -147,21 +139,21 @@ Refactor to remove all arguments by partially applying the functions.
 const filterQs = (xs) => filter((x) => match(/q/i, x), xs);
 ```
 
-{% solution src="./exercises/ch04/solution_b.js" %}  
-{% validation src="./exercises/ch04/validation_b.js" %}  
-{% context src="./exercises/support.js" %}  
+{% solution src="./exercises/ch04/solution_b.js" %}
+{% validation src="./exercises/ch04/validation_b.js" %}
+{% context src="./exercises/support.js" %}
 {% endexercise %}
 
 ---
 
-Considering the following function:
+다음 함수를 고려해 봅시다:
 
 ```js
 const keepHighest = (x, y) => (x >= y ? x : y);
 ```
 
-{% exercise %}  
-Refactor `max` to not reference any arguments using the helper function `keepHighest`.
+{% exercise %}
+도우미 함수 `keepHighest`를 사용하고 인자를 직접 참조하지 않도록 `max`를 리팩토링하세요.
 
 {% initial src="./exercises/ch04/exercise_c.js#L7;" %}
 
@@ -169,7 +161,10 @@ Refactor `max` to not reference any arguments using the helper function `keepHig
 const max = (xs) => reduce((acc, x) => (x >= acc ? x : acc), -Infinity, xs);
 ```
 
-{% solution src="./exercises/ch04/solution_c.js" %}  
-{% validation src="./exercises/ch04/validation_c.js" %}  
-{% context src="./exercises/support.js" %}  
+{% solution src="./exercises/ch04/solution_c.js" %}
+{% validation src="./exercises/ch04/validation_c.js" %}
+{% context src="./exercises/support.js" %}
 {% endexercise %}
+
+[05 장: 합성으로 코딩하기](ch05-kr.md)
+
